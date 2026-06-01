@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# NOTA: el modelo entrenado (backend/model/*.keras, *.pkl, metrics.json)
+# SE INCLUYE a proposito para que la app funcione sin reentrenar.
+# Si prefieres no versionarlo, descomenta lo siguiente:
+# backend/model/*.keras
+# backend/model/*.pkl
+# backend/model/metrics.json

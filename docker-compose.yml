@@ -1,0 +1,44 @@
+# docker-compose: orquesta los servicios del proyecto.
+#
+# Uso tipico:
+#   1) Entrenar el modelo (genera backend/model/*):
+#        docker compose run --rm trainer
+#   2) Levantar la aplicacion (backend + frontend):
+#        docker compose up --build
+#
+#   Frontend:  http://localhost:8080
+#   Backend:   http://localhost:8000  (docs interactivas en /docs)
+
+services:
+  # Servicio de ENTRENAMIENTO (se ejecuta bajo demanda, no queda corriendo)
+  trainer:
+    build:
+      context: .
+      dockerfile: training/Dockerfile
+    image: heart-trainer:1.0
+    volumes:
+      - ./data:/app/data                 # dataset de entrada
+      - ./backend/model:/app/backend/model  # artefactos de salida
+    profiles: ["train"]                  # solo corre cuando se invoca explicitamente
+
+  # Servicio BACKEND (API FastAPI)
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: heart-backend:1.0
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  # Servicio FRONTEND (Nginx)
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    image: heart-frontend:1.0
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
