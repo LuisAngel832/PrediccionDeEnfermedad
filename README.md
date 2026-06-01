@@ -90,26 +90,30 @@ Respuesta de ejemplo:
 
 ## 🐳 Publicar imágenes en DockerHub (entregable)
 
-Reemplaza `TU_USUARIO` por tu usuario de DockerHub.
+El nombre debe ir en **minúsculas** (DockerHub no acepta mayúsculas en el repositorio).
 
 ```bash
 # 1) Iniciar sesión
-docker login
+docker login -u luisangel832
 
 # 2) Etiquetar las imágenes ya construidas
-docker tag heart-backend:1.0  TU_USUARIO/heart-backend:1.0
-docker tag heart-frontend:1.0 TU_USUARIO/heart-frontend:1.0
+docker tag heart-backend:1.0  luisangel832/heart-backend:1.0
+docker tag heart-frontend:1.0 luisangel832/heart-frontend:1.0
 
 # 3) Subirlas
-docker push TU_USUARIO/heart-backend:1.0
-docker push TU_USUARIO/heart-frontend:1.0
+docker push luisangel832/heart-backend:1.0
+docker push luisangel832/heart-frontend:1.0
 ```
 
 Luego cualquiera puede usarlas sin construir nada:
 ```bash
-docker run -d -p 8000:8000 TU_USUARIO/heart-backend:1.0
-docker run -d -p 8080:80   TU_USUARIO/heart-frontend:1.0
+docker run -d -p 8000:8000 luisangel832/heart-backend:1.0
+docker run -d -p 8080:80   luisangel832/heart-frontend:1.0
 ```
+
+Imágenes publicadas:
+- https://hub.docker.com/r/luisangel832/heart-backend
+- https://hub.docker.com/r/luisangel832/heart-frontend
 
 ---
 

@@ -109,15 +109,15 @@ de Nginx) y muestra la probabilidad con una barra de color.
 ## 2.4 Rutas de código (GitHub) e imágenes Docker
 
 **Repositorio GitHub (monorepo):**
-- URL: `[https://github.com/TU_USUARIO/proyectoIa]`
+- URL: https://github.com/LuisAngel832/PrediccionDeEnfermedad
 - Entrenamiento: `training/train.py`
 - Backend: `backend/app/main.py`
 - Frontend: `frontend/index.html`, `frontend/app.js`
 - Orquestación: `docker-compose.yml`
 
 **Imágenes en DockerHub:**
-- Backend: `[https://hub.docker.com/r/TU_USUARIO/heart-backend]` → `TU_USUARIO/heart-backend:1.0`
-- Frontend: `[https://hub.docker.com/r/TU_USUARIO/heart-frontend]` → `TU_USUARIO/heart-frontend:1.0`
+- Backend: https://hub.docker.com/r/luisangel832/heart-backend → `luisangel832/heart-backend:1.0`
+- Frontend: https://hub.docker.com/r/luisangel832/heart-frontend → `luisangel832/heart-frontend:1.0`
 
 > 📷 **Captura:** las imágenes publicadas en tu cuenta de DockerHub.
 >
