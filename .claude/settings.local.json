@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python -m pip --version)",
-      "Bash(docker --version)",
-      "Bash(git --version)"
-    ]
-  }
-}
